@@ -49,4 +49,4 @@ Bills.init(
 
 
 
-module.exports = Bill;
+module.exports = Bills;
