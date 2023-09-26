@@ -9,8 +9,22 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head> 
 <body class="bg-gray-200">
-    <h1>MONEY MAGNET</h1>
-    {{{body}}} {{!--Inserts whatever view we want in here. Acts as placeholder. --}}
+    
+    {{!--Inserts whatever view we want in here. Acts as placeholder. --}}
+    <header>
+        <nav>
+            <h1 class="bg-blue-600">MONEY MAGNET</h1>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a>
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+    </nav>
+    </header>
+    {{{body}}}   
 
+    <footer>Money Magnet was created by: Allison, Davis, Jacob and Salvador</footer>
 </body>
 </html>
