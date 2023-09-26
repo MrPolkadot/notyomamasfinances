@@ -1,3 +1,8 @@
+const Bills = require("./models/Bills");
+const Expenses = require("./models/Expenses");
+const Savings = require("./models/Savings");
+const User = require("./models/User");
+// models
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers'); //Create routes
