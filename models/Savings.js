@@ -3,9 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Category extends Model {}
+class Savings extends Model {}
 
-Category.init(
+Savings.init(
   {
     // define columns
     id: {
@@ -14,18 +14,22 @@ Category.init(
       primaryKey: true,
       autoIncrement: true
     },
-    category_name: {
+    savings_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
+    savings_amount: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: 'savings',
   }
 );
 
-module.exports = Category;
+module.exports = Savings;

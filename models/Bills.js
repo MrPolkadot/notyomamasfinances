@@ -29,13 +29,6 @@ Bills.init(
                 isDecimal: true,
             },
         },
-        category_id: {
-            type: DataTypes.INTEGER,
-            reference: {
-                model: 'category',
-                key: 'id',
-            },
-        },
         
     },
     {
