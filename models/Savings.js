@@ -20,7 +20,18 @@ Savings.init(
     },
     savings_amount: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+    },
+    savings_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      }
     }
   },
   {

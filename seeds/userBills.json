@@ -1,0 +1,8 @@
+[
+    {
+        "bill_name": "rent",
+        "due_date" : "2023-10-1",
+        "amount": 1200,
+        "user_id": 1
+    }
+]
