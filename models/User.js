@@ -36,27 +36,6 @@ User.init(
         len: [8],
       },
     },
-    savings_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "savings",
-        key: "id",
-      }
-    },
-    expenses_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "expenses",
-        key: "id",
-      }
-    },
-    bills_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "bills",
-        key: "id",
-      }
-    }
   },
   {
     hooks: {
