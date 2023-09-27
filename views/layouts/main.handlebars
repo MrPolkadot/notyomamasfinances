@@ -7,11 +7,12 @@
     <title>Money Magnet</title>
     <link rel="stylesheet" href="/output.css">{{!-- with this href setup, we can use tailwind in our handlebars --}}
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head> 
 <body class="bg-gray-200">
     
     {{!--Inserts whatever view we want in here. Acts as placeholder. --}}
-    <header>
+    <div class="bg-blue-600">
         <nav>
             <h1 class="bg-blue-600">MONEY MAGNET</h1>
         <!-- Conditionally render login or logout links -->
@@ -22,7 +23,7 @@
         <a href="/login">login</a>
         {{/if}}
     </nav>
-    </header>
+    </div>
     {{{body}}}   
 
     <footer>Money Magnet was created by: Allison, Davis, Jacob and Salvador</footer>
