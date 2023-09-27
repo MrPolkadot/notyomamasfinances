@@ -30,4 +30,4 @@ Savings.belongsTo(User, {
     foreignKey: "savings_id",
 });
 
-module.exports = { Bills, Expenses, Savings};
+module.exports = { User, Bills, Expenses, Savings };
