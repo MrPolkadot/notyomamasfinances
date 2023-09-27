@@ -22,6 +22,10 @@ Savings.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    savings_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

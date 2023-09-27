@@ -18,6 +18,10 @@ Expenses.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    expense_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
