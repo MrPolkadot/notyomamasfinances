@@ -36,11 +36,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'dist')))
 
-//app.use(routes);
+app.use(routes);
 
 app.get('/', (req, res) => {
-  res.render('login');
-  console.log("rendered")
+  
 });
 
 sequelize.sync({ force: false }).then(() => {
