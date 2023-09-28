@@ -17,8 +17,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // May need to change this
 const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
+  secret: 'Super secret money',
+  cookie: {
+    maxAge: 600000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
