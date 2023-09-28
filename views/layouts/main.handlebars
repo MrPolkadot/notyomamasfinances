@@ -18,5 +18,7 @@
     {{{body}}} {{!-- Renders the homepage by default--}}
 
    {{> footer}}
+   {{#if logged_in}}
+   <script src="/js/logout.js"></script>
   </body>
 </html>
