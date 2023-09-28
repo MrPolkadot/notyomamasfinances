@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'dist')))
 app.use(routes);
 
 app.get('/', (req, res) => {
-  
+
 });
 
 sequelize.sync({ force: false }).then(() => {
