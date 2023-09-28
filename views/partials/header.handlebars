@@ -1,0 +1,25 @@
+<header>
+  <nav class="bg-blue-600 flex justify-between">
+    <div>
+      <h1>MONEY MAGNET</h1>
+    </div>
+
+    <!-- Conditionally render login or logout links -->
+    <div>
+      {{#if logged_in}}
+        <ul>
+          <li><a href="/profile">Profile</a></li>
+          <li><button class="no-button" id="logout">Logout</button></li>
+        </ul>
+
+      {{else}}
+        <ul>
+          <li><a class="text-sky-400" href="/">Home</a></li>
+          <li><a class="text-sky-400" href="/login">Login</a></li>
+          <li><a class="text-sky-400" href="/signup">Sign Up</a></li>
+        </ul>
+
+      {{/if}}
+    </div>
+  </nav>
+</header>

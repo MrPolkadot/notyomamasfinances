@@ -1,22 +1,14 @@
-<header>
-    <nav class="bg-blue-600">
-        <h1>MONEY MAGNET</h1>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">
-        Profile</a>
-        <button class="no-button" id="logout">Logout</button>
-            {{else}}
-        <a class="text-sky-400" href="/login">Login</a>
-        <a class="text-sky-400" href="/signup">Sign Up</a>
-            {{/if}}
-    </nav>
-</header>
-
-<main class="bg-gray-300">
+<main class="mb-5 flex flex-col items-center">
+  <div class="bg-gray-300 w-full">
     <h2>Money Magnet</h2>
-    </main>
+  </div>
 
-    <section>
-        <h2>Be attracted to save money.</h2>
-    </section>
+  <section class="bg-blue-300 w-full">
+    <h2>Be attracted to saving money</h2>
+    <div>
+      <div>
+        <p>View your expenses in a chart</p>
+      </div>
+    </div>
+  </section>
+</main>
