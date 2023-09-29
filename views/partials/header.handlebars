@@ -7,17 +7,24 @@
     <!-- Conditionally render login or logout links -->
     <div>
       {{#if logged_in}}
-        <ul>
-          <li><a href="/profile">Profile</a></li>
-          <li><button class="button" id="logout">Logout</button></li>
-        </ul>
+        <nav class="flex flex-row mx-5">
+          <ul class="font-bold">
+            <li><button class="rounded p-2"><a href="/">Home</a></button></li>
+            <li><button class="rounded p-2"><a
+                  href="/profile"
+                >Profile</a></button></li>
+            <li><button class="rounded p-2" id="logout">Logout</button></li>
+          </ul>
+        </nav>
 
       {{else}}
-        <ul>
-          <li><a class="text-sky-400" href="/">Home</a></li>
-          <li><a class="text-sky-400" href="/login">Login</a></li>
-          <li><a class="text-sky-400" href="/signup">Sign Up</a></li>
-        </ul>
+        <nav class="flex flex-row">
+          <ul>
+            <li><a class="text-sky-400" href="/">Home</a></li>
+            <li><a class="text-sky-400" href="/login">Login</a></li>
+            <li><a class="text-sky-400" href="/signup">Sign Up</a></li>
+          </ul>
+        </nav>
 
       {{/if}}
     </div>
