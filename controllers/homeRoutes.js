@@ -26,11 +26,24 @@ router.get('/profile', withAuth, async (req, res) => {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            
+            include: [
+                {
+                  model: Bills,
+                  attributes: ['bill_name', 'due_date', 'amount'],
+                },
+                {
+                  model: Expenses,
+                  attributes: ['expense_name', 'expense_date'],
+                },
+                {
+                  model: Savings,
+                  attributes: ['savings_name', 'savings_amount', 'savings_date'],
+                },
+              ],
         });
-
+        
         const user = userData.get({ plain: true });
-
+        console.log(user);
         res.render('profile', {
             ...user,
             logged_in: req.session.logged_in});
