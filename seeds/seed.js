@@ -1,10 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Bills, Expenses, Savings } = require('../models');
+const { User, Bills, Expenses, Income } = require('../models');
 
 const userData = require('./userData.json');
 const userBills = require('./userBills.json');
 const userExpenses = require('./userExpenses.json');
-const userSavings = require('./userSavings.json');
+const userIncome = require('./userIncome.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -19,7 +19,7 @@ const seedDatabase = async () => {
   await Expenses.bulkCreate(userExpenses, {
     
   });
-  await Savings.bulkCreate(userSavings, {
+  await Income.bulkCreate(userIncome, {
 
   });
 

@@ -1,6 +1,6 @@
 const Bills = require("./Bills");
 const Expenses = require("./Expenses");
-const Savings = require("./Savings");
+const Income = require("./Income");
 const User = require("./User");
 
 User.hasMany(Bills, {
@@ -13,7 +13,7 @@ User.hasMany(Expenses, {
     onDelete: 'CASCADE',
 });
 
-User.hasMany(Savings, {
+User.hasMany(Income, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
@@ -26,8 +26,8 @@ Expenses.belongsTo(User, {
     foreignKey: "user_id",
 });
 
-Savings.belongsTo(User, {
+Income.belongsTo(User, {
     foreignKey: "user_id",
 });
 
-module.exports = { User, Bills, Expenses, Savings };
+module.exports = { User, Bills, Expenses, Income };
