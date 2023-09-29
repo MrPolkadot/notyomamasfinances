@@ -22,46 +22,32 @@ router.get("/signup", async (req, res) => {
 // profile page grabs bills data
 router.get('/profile', withAuth, async (req, res) => {
     const id = req.session.user_id;
+    
     try{
         const userData = await User.findByPk(id, {
-            exclude: [
-                {
-                    attributes: ['password']
-                }
-            ],
-            include: [
-                {
-                    model: Bills,
-                    attributes: ['amount','bill_name',
+            include: [{model:Bills},{model:Expenses},{model:Income}],          
+            attributes: {
+                include: [               
+                    [
+                        sequelize.literal(
+                            `(SELECT SUM(amount) FROM bills WHERE user_id = ${id})`
+                        ),
+                        'totalBills'
                         
-                        
-                            [sequelize.literal(
-                                `(SELECT SUM(amount) FROM bills WHERE user_id = ${id})`
-                            ),
-                            'total']
-                           
-                            ]  
-                },
-                {
-                    model: Expenses,
-                    attributes: ['expense_name','expense_date'
-                    // ,
-                        
-                        
-                    //         [sequelize.literal(
-                    //             `(SELECT SUM(amount) FROM expenses WHERE user_id = ${id})`
-                    //         ),
-                    //         'total']
-                           
-                            ]  
-                },
-                {
-                    model: Income,
-                }    
-            ]
-        });        
+                    ] //Needs amount added to expenses
+                    // ,                    
+                    // [
+                    //     sequelize.literal(
+                    //         `(SELECT SUM(amount) FROM expenses WHERE user_id = ${id})`
+                    //     ),
+                    //     'totalExpenses'
+                    // ]
+                ]
+            },                     
+            
+        });
 
-        const user = userData.get({plain:true})
+        const user = userData.get({plain:true});
         console.log(user);
         res.render('profile', {user, logged_in: true});
     } catch (err) {
@@ -69,14 +55,36 @@ router.get('/profile', withAuth, async (req, res) => {
     }
      
 });
-
-router.get('/bills', async (req, res) => {
-    res.render('bills')
+//bills route
+router.get('/bills', withAuth, async (req, res) => {
+    const id = req.session.user_id;
+    try{
+        const billsData = await User.findByPk(id, {
+            include: [{model: Bills}]
+        });
+        const bills = billsData.get({plain:true});
+        console.log(bills);
+        res.render('bills', {bills, logged_in: true});
+    } catch {
+        res.status(500).json(err);
+    }
+    
 });
-
-router.get('/expenses', async (req, res) => {
-    res.render('expenses')
-})
+//expenses route
+router.get('/expenses', withAuth, async (req, res) => {
+    const id = req.session.user_id;
+    try {
+        const expenseData = await User.findByPk(id, {
+            include: [{model: Expenses}]
+        });
+        const expense = expenseData.get({plain: true});
+        console.log(expense);
+        res.render('expenses',{expense, loggedIn: true});
+    } catch {
+        res.status(500).json(err);
+    }
+    
+});
 
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
@@ -86,6 +94,28 @@ router.get('/login', (req, res) => {
     }
 
     res.render('login');
+});
+//route for one bill to be displayed if needed
+router.get('/bills/:id', withAuth, async (req, res) => {
+    try {
+        const oneBill = await Bills.findByPk(req.params.id);
+        const bill = oneBill.get({ plain: true });
+        res.render('/bills', { bill, loggedIn: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }   
+});
+//route for one expense to be displayed if needed
+router.get('/expenses/:id', withAuth, async (req, res) => {
+    try {
+        const oneExpense = await Expenses.findByPk(req.params.id);
+        const expense = oneExpense.get({ plain: true });
+        res.render('/expenses', { expense, loggedIn: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }   
 });
 
 module.exports = router;
