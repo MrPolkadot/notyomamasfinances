@@ -3,9 +3,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Savings extends Model {}
+class Income extends Model {}
 
-Savings.init(
+Income.init(
   {
     // define columns
     id: {
@@ -14,18 +14,11 @@ Savings.init(
       primaryKey: true,
       autoIncrement: true
     },
-    savings_name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    savings_amount: {
+    income_amount: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    savings_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
+    
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -39,8 +32,8 @@ Savings.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'savings',
+    modelName: 'income',
   }
 );
 
-module.exports = Savings;
+module.exports = Income;
