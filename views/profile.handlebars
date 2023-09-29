@@ -1,13 +1,25 @@
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
-    <li><a href="/api/bills">Bills</a></li>
-    <li><a href="/api/expenses">Expenses</a></li>
-    <li><a href="/api/savings">Savings</a></li>
   </ul>
-
 </nav>
 
+<section>
+  <div>
+    <p>Average Monthly Income:</p>
+    <p>Bills Total:</p>
+    <p>Expenses Budget:</p>
+    <p>Current Expenses Total:</p>
+    <p>Budget Remaining:</p>
+  </div>
+</section>
+
+<div class="text-bold text-gray-400">
+  <h2>Welcome, {{name}}</h2>
+</div>
+{{#each user.bills}}
+  <a href="/bills/{{id}}">Bill name: {{bill_name}}</a>
+{{/each}}
 <div>
   {{! Maybe input partials here? }}
 </div>
