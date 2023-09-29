@@ -1,22 +1,17 @@
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-  </ul>
-</nav>
-
 <section>
   <div>
     <p>Average Monthly Income:</p>
-    <p>Bills Total:</p>
-    <p>Expenses Budget:</p>
+    <p><a class="text-red-400" href="/bills">Bills</a> Total:</p>
+    <p><a class="text-red-400" href="/expenses">Expenses</a> Budget:</p>
     <p>Current Expenses Total:</p>
     <p>Budget Remaining:</p>
   </div>
 </section>
 
 <div class="text-bold text-gray-400">
-  <h2>Welcome, {{name}}</h2>
+  <h2>Welcome, {{user.name}}</h2>
 </div>
+
 {{#each user.bills}}
   <a href="/bills/{{id}}">Bill name: {{bill_name}}</a>
 {{/each}}
