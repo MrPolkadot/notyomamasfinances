@@ -3,6 +3,36 @@
                 <div class="bg-white p-4 rounded-md mt-4">
                     <h2 class="text-gray-500 text-lg font-semibold pb-4">Expenses</h2>
                     <div class="my-1"></div> <!-- Espacio de separación -->
+                    <form action="" id="form">
+                        <div>
+                            <input type="text"
+                                placeholder="Expense name"
+                                id="name"
+                                name="expense-name"
+                                class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"/>
+                        </div>
+                        <div>
+                            
+                                <input type="text"
+                                placeholder="Expense date"
+                                id="date"
+                                class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"/>
+                        </div>
+                        <div>
+                             
+                                <input
+                                placeholder="Amount"
+                                id="amount"
+                                class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"/>
+                        </div>
+                        <div>
+                            <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
+                                Add
+                            </button>
+                        </div>
+                        
+                              </form>
+
                     <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div> <!-- Línea con gradiente -->
                     <table class="w-full table-auto text-sm">
                         <thead>
@@ -24,15 +54,11 @@
                         </tbody>
                     </table>
                     <!-- Botón "Ver más" para la tabla de Transacciones -->
-                    <div class="text-right mt-4">
-                        
-                            <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                Add
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<script src="/js/expense.js"></script>

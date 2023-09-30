@@ -4,6 +4,37 @@
                     <h2 class="text-gray-500 text-lg font-semibold pb-4">Bills</h2>
                     <div class="my-1"></div>
                     <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
+                    <form action="" id="form">
+                        <div>
+                            <input type="text"
+                                placeholder="Bill name"
+                                id="name"
+                                name="bill-name"
+                                class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"/>
+                        </div>
+                        <div>
+                            
+                                <input type="text"
+                                placeholder="Due date"
+                                id="date"
+                                class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"/>
+                        </div>
+                        <div>
+                             
+                                <input
+                                placeholder="Amount"
+                                id="amount"
+                                class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"/>
+                        </div>
+                        <div>
+                            <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
+                                Add
+                            </button>
+                        </div>
+                        
+                              </form>
+
+                    <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
                     <table class="w-full table-auto text-sm">
                         <thead>
                             <tr class="text-sm leading-normal">
@@ -13,6 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
                             {{#each bills.bills}}
                             <tr class="hover:bg-grey-lighter">
                                 <td class="py-2 px-4 border-b border-grey-light">{{bill_name}}</td>
@@ -25,9 +57,7 @@
                     
                     <div class="text-right mt-4">
                         
-                            <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                Add
-                            </button>
+                            
                         </div>
                     </div>
                 </div>
@@ -35,3 +65,5 @@
         </div>
     </div>
 </div>
+
+<script src="/js/bills.js"></script>
