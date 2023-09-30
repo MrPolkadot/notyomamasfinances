@@ -1,9 +1,13 @@
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers'); //Create routes
+const helpers = require("./utils/helpers");
 const path = require('path');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ defaultLayout: 'main' }); //This will use main.handlebars as our main layout page.
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  helpers
+}); //This will use main.handlebars as our main layout page.
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
