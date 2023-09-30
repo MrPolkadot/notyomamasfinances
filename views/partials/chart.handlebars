@@ -1,0 +1,47 @@
+<script>
+   
+    var usersChart = new Chart(document.getElementById('usersChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Income', 'Bills','Expenses'],
+            datasets: [{
+                data: [{{user.income}}, {{user.totalBills}},{{user.totalExpenses}}],
+                backgroundColor: ['#00F0FF', '#8B8B8D','#FF0000'],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom' 
+            }
+        }
+    });
+
+   
+    var commercesChart = new Chart(document.getElementById('commercesChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Budget','Expenses'],
+            datasets: [{
+                data: [{{budget}}, {{user.totalExpenses}}],
+                backgroundColor: ['#8B8B8D','#FF0000'],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom' 
+            }
+        }
+    });
+
+   const menuBtn = document.getElementById('menuBtn');
+const sideNav = document.getElementById('sideNav');
+
+menuBtn.addEventListener('click', () => {
+    sideNav.classList.toggle('hidden'); // Agrega o quita la clase 'hidden' para mostrar u ocultar la navegación lateral
+});
+    
+</script>
