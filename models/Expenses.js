@@ -22,6 +22,14 @@ Expenses.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    amount: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+      validate: {
+          isDecimal: true,
+      },
+  
+  },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
