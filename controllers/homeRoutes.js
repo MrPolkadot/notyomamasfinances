@@ -35,21 +35,30 @@ router.get('/profile', withAuth, async (req, res) => {
                         'totalBills'
                         
                     ] //Needs amount added to expenses
-                    // ,                    
-                    // [
-                    //     sequelize.literal(
-                    //         `(SELECT SUM(amount) FROM expenses WHERE user_id = ${id})`
-                    //     ),
-                    //     'totalExpenses'
-                    // ]
+                    ,                    
+                    [
+                        sequelize.literal(
+                            `(SELECT SUM(amount) FROM expenses WHERE user_id = ${id})`
+                        ),
+                        'totalExpenses'
+                    ],
+                    [
+                        sequelize.literal(
+                            `(SELECT income_amount FROM income WHERE user_id = ${id})`
+                        ),
+                        'income'
+                    ]
                 ]
             },                     
             
         });
 
         const user = userData.get({plain:true});
+        const remaining = (user.income - (Number(user.totalBills) + Number(user.totalExpenses)));
+        const budget = (user.income - user.totalBills)
+        console.log(remaining);
         console.log(user);
-        res.render('profile', {user, logged_in: true});
+        res.render('profile', {user, budget, remaining, logged_in: true});
     } catch (err) {
         res.status(500).json(err);
     }
@@ -79,7 +88,7 @@ router.get('/expenses', withAuth, async (req, res) => {
         });
         const expense = expenseData.get({plain: true});
         console.log(expense);
-        res.render('expenses',{expense, loggedIn: true});
+        res.render('expenses',{expense, logged_in: true});
     } catch {
         res.status(500).json(err);
     }
