@@ -1,3 +1,6 @@
+
+
+
 var usersChart = new Chart(document.getElementById('usersChart'), {
     type: 'doughnut',
     data: {
@@ -42,3 +45,4 @@ const sideNav = document.getElementById('sideNav');
 menuBtn.addEventListener('click', () => {
     sideNav.classList.toggle('hidden'); // Agrega o quita la clase 'hidden' para mostrar u ocultar la navegación lateral
 });
+
