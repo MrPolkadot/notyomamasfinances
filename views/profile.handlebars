@@ -1,68 +1,83 @@
 <div class="flex flex-col h-screen bg-gray-100">
-    <div class="bg-white text-white shadow w-full p-2 flex items-center justify-between">
-        <div class="flex items-center">
-            <div class="flex items-center">
-                <h2 class="text-gray-400 font-bold text-xl"><b>Welcome {{user.name}}</b></h2>
-            </div>
-        <div class="md:hidden flex items-center">
-            <button id="menuBtn">
-                <i class="fas fa-bars text-gray-500 text-lg"></i> 
-            </button>
-        </div>
+  <div
+    class="bg-white text-white shadow w-full p-2 flex items-center justify-between"
+  >
+    <div class="flex items-center">
+      <div class="flex items-center">
+        <h2 class="text-gray-400 font-bold text-xl"><b>Welcome
+            {{user.name}}</b></h2>
+      </div>
+      <div class="md:hidden flex items-center">
+        <button id="menuBtn">
+          <i class="fas fa-bars text-gray-500 text-lg"></i>
+        </button>
+      </div>
     </div>
-</div>
+  </div>
 
-    
-    <div class="flex-1 flex flex-wrap">
-        <div class="p-2 bg-white w-full md:w-60 flex flex-col md:flex hidden" id="sideNav">
-            <nav>
-                <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white" href="/">
-                    <i class="fas fa-home mr-2"></i>Home
-                </a>
-                <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white" href="/bills">
-                    <i class="fas fa-file-alt mr-2"></i>Bills
-                </a>
-                
-                <a class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white" href="/expenses">
-                    <i class="fa-solid fa-wallet mr-2"></i>Expenses
-                </a>
-            </nav>
+  <div class="flex-1 flex flex-wrap">
+    <div
+      class="p-2 bg-white w-full md:w-60 flex flex-col md:flex hidden"
+      id="sideNav"
+    >
+      <nav>
+        <a
+          class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+          href="/"
+        >
+          <i class="fas fa-home mr-2"></i>Home
+        </a>
+        <a
+          class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+          href="/bills"
+        >
+          <i class="fas fa-file-alt mr-2"></i>Bills
+        </a>
 
-            
-          
-            
-            <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mt-2"></div>
+        <a
+          class="block text-gray-500 py-2.5 px-4 my-4 rounded transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:text-white"
+          href="/expenses"
+        >
+          <i class="fa-solid fa-wallet mr-2"></i>Expenses
+        </a>
+      </nav>
+
+      <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mt-2"></div>
+    </div>
+
+    <div class="flex-1 p-4 w-full md:w-1/2 sm:wd-1/2">
+
+      <div
+        class="mt-8 flex flex-wrap space-x-0 space-y-2 md:space-x-4 md:space-y-0"
+      >
+
+        <div class="flex-1 bg-white p-4 shadow rounded-lg md:w-1/2">
+          <h2 class="text-gray-500 text-lg font-semibold pb-1">Budget</h2>
+          <div class="my-1"></div>
+          <div
+            class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"
+          ></div>
+          <div
+            class="chart-container"
+            style="position: relative; height:150px; width:100%"
+          >
+
+            <canvas id="usersChart"></canvas>
+          </div>
+          <div class="px-4 mt-6">
+
+            <p>Average Monthly Income: {{format_amount user.income}}</p>
+
+            <p class="bg-gray-200">Bills Total:
+              {{format_amount user.totalBills}}</p>
+            <p>Budget: {{format_amount budget}}</p>
+            <p class="bg-gray-200">Current Expenses Total:
+              {{format_amount user.totalExpenses}}</p>
+            <p>Budget Remaining: {{format_amount remaining}}</p>
+          </div>
         </div>
 
-        
-        <div class="flex-1 p-4 w-full md:w-1/2 sm:wd-1/2">
-            
-          
-
-                
-            <div class="mt-8 flex flex-wrap space-x-0 space-y-2 md:space-x-4 md:space-y-0">
-                
-                <div class="flex-1 bg-white p-4 shadow rounded-lg md:w-1/2">
-                    <h2 class="text-gray-500 text-lg font-semibold pb-1">Budget</h2>
-                    <div class="my-1"></div> 
-                    <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div> 
-                    <div class="chart-container" style="position: relative; height:150px; width:100%">
-                        
-                        <canvas id="usersChart"></canvas>
-                    </div>
-                    <div class="px-4 mt-6">
-                        
-                      <p>Average Monthly Income: {{format_amount user.income}}</p>
-                      
-                      <p class="bg-gray-200">Bills Total: {{format_amount user.totalBills}}</p>
-                      <p>Budget: {{format_amount budget}}</p>
-                      <p class="bg-gray-200">Current Expenses Total: {{format_amount user.totalExpenses}}</p>
-                      <p>Budget Remaining: {{format_amount remaining}}</p>
-                    </div>
-                </div>
-
-               
-                {{!-- <div class="flex-1 bg-white p-4 shadow rounded-lg md:w-1/2">
+        {{! <div class="flex-1 bg-white p-4 shadow rounded-lg md:w-1/2">
                     <h2 class="text-gray-500 text-lg font-semibold pb-1">Totals</h2>
                     <div class="my-1"></div>
                     <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
@@ -70,82 +85,89 @@
                         
                         <canvas id="commercesChart"></canvas>
                     </div>
-                </div> --}}
-            </div>
+                </div> }}
+      </div>
 
-            
-            <div class="mt-8 bg-white p-4 shadow rounded-lg">
-                <h2 class="text-gray-500 text-lg font-semibold pb-4">Expenses</h2>
-                <div class="my-1"></div> 
-                <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div> 
-                <table class="w-full table-auto text-sm">
-                    <thead>
-                        <tr class="text-sm leading-normal">
-                            <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Name</th>
-                            <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Date</th>
-                            <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each user.expenses}}
-                        <tr class="hover:bg-grey-lighter">
-                            <td class="py-2 px-4 border-b border-grey-light">{{expense_name}}</td>
-                            <td class="py-2 px-4 border-b border-grey-light">{{format_date expense_date}}</td>
-                            <td class="py-2 px-4 border-b border-grey-light">{{format_amount amount}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-                
-                <div class="text-right mt-4">
-                    
-                    <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                        <a href="/bills">
-                        See More</a>
-                    </button>
-                </div>
-            </div>
+      <div class="mt-8 bg-white p-4 shadow rounded-lg">
+        <h2 class="text-gray-500 text-lg font-semibold pb-4">Expenses</h2>
+        <div class="my-1"></div>
+        <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
+        <table class="w-full table-auto text-sm">
+          <thead>
+            <tr class="text-sm leading-normal">
+              <th
+                class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
+              >Name</th>
+              <th
+                class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
+              >Date</th>
+              <th
+                class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
+              >Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each user.expenses}}
+              <tr class="hover:bg-grey-lighter">
+                <td
+                  class="py-2 px-4 border-b border-grey-light"
+                >{{expense_name}}</td>
+                <td class="py-2 px-4 border-b border-grey-light">{{format_date
+                    expense_date
+                  }}</td>
+                <td class="py-2 px-4 border-b border-grey-light">{{format_amount
+                    amount
+                  }}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
 
-            <div class="mt-8 bg-white p-4 shadow rounded-lg">
-                <div class="bg-white p-4 rounded-md mt-4">
-                    <h2 class="text-gray-500 text-lg font-semibold pb-4">Bills</h2>
-                    <div class="my-1"></div>
-                    <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                    <table class="w-full table-auto text-sm">
-                        <thead>
-                            <tr class="text-sm leading-normal">
-                                <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Bill Name</th>
-                                <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Due Date</th>
-                                <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">Amount</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            {{#each user.bills}}
-                            <tr class="hover:bg-grey-lighter">
-                                
-                                <td class="py-2 px-4 border-b border-grey-light">{{bill_name}}</td>              
-                                <td class="py-2 px-4 border-b border-grey-light">{{format_date due_date}}</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">{{format_amount amount}}</td>
-                                
-                            </tr>
-                            {{/each}}
-                        </tbody>
-                    </table>
-                    <div class="text-right mt-4">
-                        
-                            <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
-                                <a href="/bills">
-                                See More</a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+
+      <div class="mt-8 bg-white p-4 shadow rounded-lg">
+        <div class="bg-white p-4 rounded-md mt-4">
+          <h2 class="text-gray-500 text-lg font-semibold pb-4">Bills</h2>
+          <div class="my-1"></div>
+          <div
+            class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"
+          ></div>
+          <table class="w-full table-auto text-sm">
+            <thead>
+              <tr class="text-sm leading-normal">
+                <th
+                  class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
+                >Bill Name</th>
+                <th
+                  class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
+                >Due Date</th>
+                <th
+                  class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right"
+                >Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {{#each user.bills}}
+                <tr class="hover:bg-grey-lighter">
+
+                  <td
+                    class="py-2 px-4 border-b border-grey-light"
+                  >{{bill_name}}</td>
+                  <td class="py-2 px-4 border-b border-grey-light">{{format_date
+                      due_date
+                    }}</td>
+                  <td
+                    class="py-2 px-4 border-b border-grey-light text-right"
+                  >{{format_amount amount}}</td>
+
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
-
-
-
