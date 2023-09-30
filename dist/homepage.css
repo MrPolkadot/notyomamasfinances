@@ -79,3 +79,42 @@ footer {
    
 }
 
+.loginbackground {
+    color:white;
+    background-color: #7f9df1;
+    float: center;
+    background-image: linear-gradient(45deg, rebeccapurple, transparent 50%,transparent);
+    shape-outside: linear-gradient(45deg, rebeccapurple, transparent 80%,
+    transparent);
+}
+
+@keyframes magnet {
+    from {
+        margin-left: 20%;
+        width: 100%;
+      }
+    
+      50% {
+        font-size: 16px;
+        margin-left: 10%;
+        width: 10%;
+      }
+    
+      to {
+        margin-left: 10%;
+        width: 100%;
+      }
+    }
+
+
+.magnet {
+    /* animation-direction: alternate; */
+    animation-duration: 3s;
+    animation-name: magnet;
+    animation-iteration-count: infinite;
+    margin-left: -10px;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-top: 3%;
+    color:gold;
+    
+}
