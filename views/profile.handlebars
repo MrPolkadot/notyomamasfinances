@@ -52,12 +52,12 @@
                     </div>
                     <div class="px-4 mt-6">
                         
-                      <p>Average Monthly Income: {{user.income}}</p>
+                      <p>Average Monthly Income: {{format_amount user.income}}</p>
                       
-                      <p class="bg-gray-200">Bills Total: {{user.totalBills}}</p>
-                      <p>Budget: {{budget}}</p>
-                      <p class="bg-gray-200">Current Expenses Total: {{user.totalExpenses}}</p>
-                      <p>Budget Remaining: {{remaining}}</p>
+                      <p class="bg-gray-200">Bills Total: {{format_amount user.totalBills}}</p>
+                      <p>Budget: {{format_amount budget}}</p>
+                      <p class="bg-gray-200">Current Expenses Total: {{format_amount user.totalExpenses}}</p>
+                      <p>Budget Remaining: {{format_amount remaining}}</p>
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@
                         <tr class="hover:bg-grey-lighter">
                             <td class="py-2 px-4 border-b border-grey-light">{{expense_name}}</td>
                             <td class="py-2 px-4 border-b border-grey-light">{{format_date expense_date}}</td>
-                            <td class="py-2 px-4 border-b border-grey-light">{{amount}}</td>
+                            <td class="py-2 px-4 border-b border-grey-light">{{format_amount amount}}</td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -126,7 +126,7 @@
                                 
                                 <td class="py-2 px-4 border-b border-grey-light">{{bill_name}}</td>              
                                 <td class="py-2 px-4 border-b border-grey-light">{{format_date due_date}}</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">{{amount}}</td>
+                                <td class="py-2 px-4 border-b border-grey-light text-right">{{format_amount amount}}</td>
                                 
                             </tr>
                             {{/each}}
