@@ -4,7 +4,7 @@
                     <h2 class="text-gray-500 text-lg font-semibold pb-4">Bills</h2>
                     <div class="my-1"></div>
                     <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                    <form action="" id="form">
+                    <form class="inline" action="" id="form">
                         <div>
                             <input type="text"
                                 placeholder="Bill name"
@@ -49,7 +49,7 @@
                             <tr class="hover:bg-grey-lighter">
                                 <td class="py-2 px-4 border-b border-grey-light">{{bill_name}}</td>
                                 <td class="py-2 px-4 border-b border-grey-light">{{format_date due_date}}</td>
-                                <td class="py-2 px-4 border-b border-grey-light text-right">{{amount}}</td>
+                                <td class="py-2 px-4 border-b border-grey-light text-right">{{format_amount amount}}</td>
                             </tr>
                             {{/each}}
                         </tbody>
