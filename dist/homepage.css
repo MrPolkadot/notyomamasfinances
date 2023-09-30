@@ -1,19 +1,84 @@
-body {
-    background-color: #527ae9;
-    opacity: 0.6;
+
     
-}
 
 .title {
    font-size: 50px;
    font-family: 'Bebas Neue', sans-serif;
    display: flex;
    justify-content: center;
+   transition: 2s ease-in-out;
+   background-color:#7f9df1;
+   color:grey;
+   float: center;
+     background-image: linear-gradient(45deg, white, transparent 50%,transparent);
+     shape-outside: linear-gradient(45deg, rebeccapurple, transparent 80%,
+     transparent);
+   
+
+   
+   
 }
 .view {
     display:flex;
+    flex-direction: column;
     justify-content:center;
-    font-size: 15px;
+    align-items: center;
+    min-height: 20rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 25px;
     font-family: 'Bebas Neue', sans-serif;
+     color:white;
+     background-color: #7f9df1;
+     float: center;
+     background-image: linear-gradient(45deg, rebeccapurple, transparent 50%,transparent);
+     shape-outside: linear-gradient(45deg, rebeccapurple, transparent 80%,
+     transparent);
+   
+}
+
+.title:hover {
+    font-size: 70px;
+    /* transition: 2s ease-out; */
+    color: gold; 
+    /* transition: 2s ease-in-out; */
+    
 
 }
+
+.base {
+    background-color: rgb(241, 106, 106);
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    min-height: 40rem;
+     width: 100%; 
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    float: center;
+    /* width: 200px; */
+    /* height: 200px; */
+    background-image: linear-gradient(45deg, rebeccapurple, transparent 80%,transparent);
+    shape-outside: linear-gradient(45deg, rebeccapurple, transparent 80%,
+    transparent);
+        /* shape-image-threshold: 0.4; */
+      }
+    
+    
+
+
+footer {
+    background-color: rgba(241, 106, 106, 0.783);
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+   
+}
+
