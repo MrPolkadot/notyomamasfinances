@@ -19,7 +19,8 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to whereever you want
       document.location.replace('/');
     } else {
-      alert(response.statusText);
+      alert('Incorrect email or password!');
+      response.json({ message: 'Incorrect email or password!'})
     }
   }
 };
