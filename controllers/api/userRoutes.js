@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 });
 // Verify user credentials. login
 router.post('/login', async (req, res) => {
-  try {
+  
     const userData = await User.findOne({ where: { email: req.body.email } });
     
     if (!userData) {
@@ -43,9 +43,7 @@ router.post('/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });
     });
     
-  } catch (err) {
-    res.status(400).json(err);
-  }
+ 
 });
 
 router.post('/logout', (req, res) => {
