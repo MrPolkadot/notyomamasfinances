@@ -56,8 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
         const user = userData.get({plain:true});
         const remaining = (user.income - (Number(user.totalBills) + Number(user.totalExpenses)));
         const budget = (user.income - user.totalBills)
-        console.log(remaining);
-        console.log(user);
+
         res.render('profile', {user, budget, remaining, logged_in: true});
     } catch (err) {
         res.status(500).json(err);
@@ -87,7 +86,7 @@ router.get('/expenses', withAuth, async (req, res) => {
             include: [{model: Expenses}]
         });
         const expense = expenseData.get({plain: true});
-        console.log(expense);
+        
         res.render('expenses',{expense, logged_in: true});
     } catch {
         res.status(500).json(err);
@@ -105,22 +104,24 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 //route for one bill to be displayed if needed
-router.get('/bills/:id', withAuth, async (req, res) => {
+router.get('/bill/:id', withAuth, async (req, res) => {
     try {
         const oneBill = await Bills.findByPk(req.params.id);
         const bill = oneBill.get({ plain: true });
-        res.render('/bills', { bill, loggedIn: true });
+        console.log(bill);
+        res.render('oneBill', { bill, logged_in: true });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }   
 });
 //route for one expense to be displayed if needed
-router.get('/expenses/:id', withAuth, async (req, res) => {
+router.get('/expense/:id', withAuth, async (req, res) => {
     try {
         const oneExpense = await Expenses.findByPk(req.params.id);
         const expense = oneExpense.get({ plain: true });
-        res.render('/expenses', { expense, loggedIn: true });
+        console.log(expense);
+        res.render('oneExpense', { expense, logged_in: true });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

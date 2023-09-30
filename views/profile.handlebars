@@ -77,96 +77,12 @@
           </div>
         </div>
 
-        {{! <div class="flex-1 bg-white p-4 shadow rounded-lg md:w-1/2">
-                    <h2 class="text-gray-500 text-lg font-semibold pb-1">Totals</h2>
-                    <div class="my-1"></div>
-                    <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-                    <div class="chart-container" style="position: relative; height:150px; width:100%">
-                        
-                        <canvas id="commercesChart"></canvas>
-                    </div>
-                </div> }}
+        
       </div>
 
-      <div class="mt-8 bg-white p-4 shadow rounded-lg">
-        <h2 class="text-gray-500 text-lg font-semibold pb-4">Expenses</h2>
-        <div class="my-1"></div>
-        <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
-        <table class="w-full table-auto text-sm">
-          <thead>
-            <tr class="text-sm leading-normal">
-              <th
-                class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
-              >Name</th>
-              <th
-                class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
-              >Date</th>
-              <th
-                class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
-              >Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each user.expenses}}
-              <tr class="hover:bg-grey-lighter">
-                <td
-                  class="py-2 px-4 border-b border-grey-light"
-                >{{expense_name}}</td>
-                <td class="py-2 px-4 border-b border-grey-light">{{format_date
-                    expense_date
-                  }}</td>
-                <td class="py-2 px-4 border-b border-grey-light">{{format_amount
-                    amount
-                  }}</td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
+      
 
-      </div>
-
-      <div class="mt-8 bg-white p-4 shadow rounded-lg">
-        <div class="bg-white p-4 rounded-md mt-4">
-          <h2 class="text-gray-500 text-lg font-semibold pb-4">Bills</h2>
-          <div class="my-1"></div>
-          <div
-            class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"
-          ></div>
-          <table class="w-full table-auto text-sm">
-            <thead>
-              <tr class="text-sm leading-normal">
-                <th
-                  class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
-                >Bill Name</th>
-                <th
-                  class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light"
-                >Due Date</th>
-                <th
-                  class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right"
-                >Amount</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {{#each user.bills}}
-                <tr class="hover:bg-grey-lighter">
-
-                  <td
-                    class="py-2 px-4 border-b border-grey-light"
-                  >{{bill_name}}</td>
-                  <td class="py-2 px-4 border-b border-grey-light">{{format_date
-                      due_date
-                    }}</td>
-                  <td
-                    class="py-2 px-4 border-b border-grey-light text-right"
-                  >{{format_amount amount}}</td>
-
-                </tr>
-              {{/each}}
-            </tbody>
-          </table>
-
-        </div>
+      
       </div>
     </div>
   </div>

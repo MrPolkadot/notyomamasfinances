@@ -47,7 +47,7 @@
                             
                             {{#each bills.bills}}
                             <tr class="hover:bg-grey-lighter">
-                                <td class="py-2 px-4 border-b border-grey-light">{{bill_name}}</td>
+                                <td class="py-2 px-4 border-b border-grey-light"><a href="/bill/{{id}}">{{bill_name}}</a></td>
                                 <td class="py-2 px-4 border-b border-grey-light">{{format_date due_date}}</td>
                                 <td class="py-2 px-4 border-b border-grey-light text-right">{{format_amount amount}}</td>
                             </tr>
