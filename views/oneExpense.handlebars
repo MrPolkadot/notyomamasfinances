@@ -1,13 +1,21 @@
-<div>
+<div class="m-52"></div>
+<div class="flex flex-row justify-center h-11 bg-gray-100 p-3 w-3/5 ml-64 shadow-inner">
+<div class="flex flex-row p-5">
     name: {{expense.expense_name}}
 </div>
-<div>
+</div>
+<div class="flex flex-row justify-center h-11 bg-gray-100 p-3 w-3/5 ml-64">
+<div class ="flex flex-row p-5">
     date: {{format_date expense.expense_date}}
 </div>
-<div>
+</div>
+<div class="flex flex-row justify-center h-19 bg-gray-100 p-3 w-3/5 ml-64">
+<div class="flex flex-row p-5">
     amount: {{format_amount expense.amount}}
 </div>
+</div>
+</div>
 
-<button>
+<button class="text-gray-700 transition duration-200 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-cyan-500 hover:bg-blue-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
     Delete
 </button>

@@ -1,13 +1,25 @@
-<div>
-    name: {{bill.bill_name}}
+<div class="m-52"></div>
+<div class="flex flex-row justify-center h-11 bg-gray-100 p-3 w-3/5 ml-64 shadow-inner">
+<div class="flex flex-row p-5">
+    Name: {{bill.bill_name}}
 </div>
-<div>
-    date: {{format_date bill.due_date}}
 </div>
-<div>
-    amount: {{format_amount bill.amount}}
+<div class="flex flex-row justify-center h-11 bg-gray-100 p-3 w-3/5 ml-64">
+<div class ="flex flex-row p-5">
+    Date: {{format_date bill.due_date}}
+</div>
+</div>
+<div class="flex flex-row justify-center h-19 bg-gray-100 p-3 w-3/5 ml-64">
+<div class="flex flex-row p-5">
+    Amount: {{format_amount bill.amount}}
+</div>
+</div>
 </div>
 
-<button>
-    Delete
+
+{{!-- <button type="delete"> --}}
+    <div>
+   <i class="fa-sharp fa-solid fa-circle-trash" style="color: #5d83c6;"></i>
+   </div>
 </button>
+</div>
