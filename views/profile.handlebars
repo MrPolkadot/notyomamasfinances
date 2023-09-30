@@ -64,10 +64,20 @@
 
             <canvas id="usersChart"></canvas>
           </div>
-          <div class="px-4 mt-6">
-
-            <p>Average Monthly Income: {{format_amount user.income}}</p>
-
+          <div class="px-4 py-4 mt-6">
+            <div class="flex">
+              <p>Average Monthly Income: {{format_amount user.income}}</p>
+              <input
+                type="text"
+                id="income"
+                placeholder="Enter income amount"
+                class="border rounded py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-50"
+              />
+              <button
+                type="submit"
+                class="h-10 w-20 text-xs bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-1 px-1 rounded"
+              >Add income</button>
+            </div>
             <p class="bg-gray-200">Bills Total:
               {{format_amount user.totalBills}}</p>
             <p>Budget: {{format_amount budget}}</p>
