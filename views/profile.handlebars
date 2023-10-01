@@ -100,6 +100,26 @@
     </div>
 </div>
 
+<script>
+    var usersChart = new Chart(document.getElementById('usersChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Income', 'Bills','Expenses'],
+            datasets: [{
+                data: [{{ user.income }}, {{user.totalBills}},{{user.totalExpenses}}],
+                backgroundColor: ['#31bf0a', '#f7e91e','#FF0000'],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom' 
+            }
+        }
+    });
+</script>
+
 {{#if user.income}}
 <script src="/js/updateIncome.js"></script>
 {{else}}
