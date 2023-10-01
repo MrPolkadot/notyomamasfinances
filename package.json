@@ -4,11 +4,10 @@
   "description": "Goal oriented finance tracker Salvador Allison Davis jacob",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "watch": "nodemon server.js",
     "mysql": "mysql -u root -p",
-    "start": "node server.js",
     "seed": "node seeds/seed.js"
   },
   "keywords": [],
