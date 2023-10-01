@@ -1,0 +1,29 @@
+<script>
+  var sampleChart = new Chart(document.getElementById('sampleChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Income', 'Bills','Expenses'],
+            datasets: [{
+                data: [2000, 400, 100],
+                backgroundColor: ['#31bf0a', '#f7e91e','#FF0000'],
+                
+            }],
+            
+        },
+        options: {
+            plugins: {
+            legend: {
+                labels: {
+                color: '#ffff'
+            }
+            }
+            }
+            ,
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom' 
+            }
+        }
+    });
+</script>

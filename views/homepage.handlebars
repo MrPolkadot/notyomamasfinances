@@ -1,17 +1,27 @@
 <main class="homepage-background">
   <section>
     <h2 class="title">Attract financial freedom</h2>
-    
+  </section>
+
+  
+
+  <section>
+    <div class="view flex flex-row-reverse justify-around">
+        <p>Track your expenses with Money Magnet</p>
+      <div class="chart-container w-72 h-48">
+      <p>Have a clear view of your budget</p>
+      <div class="h-36">
+        <canvas id="sampleChart"></canvas>
+      </div>
       
     </div>
-  </section>
-  <section>
-<div class="view">
-        <p>Track your expenses with Money Magnet</p>
-      </div>
-      <div class="base">
-        <a href ='/login'> Login to start now</a>
-      </div>
+    </div>
+    <div class="base">
+      <a href ='/login'> Login to start now</a>
+    </div>
       
   </section>
 </main>
+
+
+{{> sampleChart}}
