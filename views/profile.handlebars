@@ -67,6 +67,7 @@
           <div class="px-4 py-4 mt-6">
             <div class="flex">
               <p>Average Monthly Income: {{format_amount user.income}}</p>
+              <form id="form">
               <input
                 type="text"
                 id="income"
@@ -77,6 +78,7 @@
                 type="submit"
                 class="h-10 w-20 text-xs bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-1 px-1 rounded"
               >Add income</button>
+              </form>
             </div>
             <p class="bg-gray-200">Bills Total:
               {{format_amount user.totalBills}}</p>
@@ -97,3 +99,8 @@
     </div>
   </div>
 </div>
+{{#if user.income}}
+<script src="/js/updateIncome.js"></script>
+{{else}}
+<script src="/js/income.js"></script>
+{{/if}}

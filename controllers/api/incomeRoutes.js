@@ -14,6 +14,22 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+//update amount
+router.put('/', withAuth, async (req, res) => {
+  try {
+    const newIncome = await Income.update(req.body,{
+      
+      where: {
+        
+        user_id: req.session.user_id,
+      },
+    });
+  
+    res.status(200).json(newIncome);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
   
 router.delete('/:id', withAuth, async (req, res) => {
   try {

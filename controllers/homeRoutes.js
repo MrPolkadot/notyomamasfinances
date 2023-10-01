@@ -56,7 +56,7 @@ router.get('/profile', withAuth, async (req, res) => {
         const user = userData.get({plain:true});
         const remaining = (user.income - (Number(user.totalBills) + Number(user.totalExpenses)));
         const budget = (user.income - user.totalBills)
-
+        console.log(user);
         res.render('profile', {user, budget, remaining, logged_in: true});
     } catch (err) {
         res.status(500).json(err);
