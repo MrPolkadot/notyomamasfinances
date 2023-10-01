@@ -1,27 +1,27 @@
 # Money Magnet
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-## Helps you manage your budget by storing bills and expenses information.
+## App Description
                
   - To allow user a place to track their finances.
   - No more writing budgets on paper and losing it. This will store information for you
-
+  - Helps you manage your budget by storing bills and expenses information.
         
 ## Table of Contents        
         
 - [Money Magnet](#money-magnet)
-  - [Helps you manage your budget by storing bills and expenses information.](#helps-you-manage-your-budget-by-storing-bills-and-expenses-information)
+  - [App Description](#app-description)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
-  - [Contributing](#contributing)
+  - [Technologies](#technologies)
   - [Tests](#tests)
   - [Questions](#questions)
         
 ## Installation
         
-Just visit:
+Just visit: https://moneymagnet.up.railway.app/
         
 ## Usage
         
@@ -39,9 +39,14 @@ Alissa Patterson - https://github.com/Apatterson32
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
         
-## Contributing
+## Technologies
+
+- ChatGpt
+- Chart.js
+- TailwindCSS
+- 
         
-none
+
 
 ## Tests
 
