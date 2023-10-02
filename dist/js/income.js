@@ -2,6 +2,11 @@ const addIncome = async (event) => {
     event.preventDefault();
   
     const income_amount = document.querySelector('#income').value.trim();
+
+    if (income_amount.includes('$') || income_amount.includes(',')) {
+      alert("Please remove any '$' or ',' from the amount field.");
+      return; 
+    }
     
     if (income_amount) {
       const response = await fetch('/api/income', {

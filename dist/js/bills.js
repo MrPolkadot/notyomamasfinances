@@ -5,6 +5,11 @@ const addBill = async (event) => {
     const due_date = document.querySelector('#date').value.trim();
     const amount = document.querySelector('#amount').value.trim();
 
+    if (amount.includes('$') || amount.includes(',')) {
+      alert("Please remove any '$' or ',' from the amount field.");
+      return; 
+    };
+
     if(bill_name && due_date && amount) {
         const response = await fetch('/api/bills', {
             method: 'POST',
