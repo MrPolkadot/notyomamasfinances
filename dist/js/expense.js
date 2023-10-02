@@ -5,6 +5,11 @@ const addExpense = async (event) => {
   const expense_date = document.querySelector('#date').value.trim();
   const amount = document.querySelector('#amount').value.trim();
 
+  if (amount.includes('$') || amount.includes(',')) {
+    alert("Please remove any '$' or ',' from the amount field.");
+    return; 
+  };
+
   if (expense_name && expense_date && amount) {
     const response = await fetch('/api/expenses', {
       method: 'POST',
