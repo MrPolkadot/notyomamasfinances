@@ -4,6 +4,11 @@ const { Bills, Expenses, Income, User } = require("../models")
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/profile');
+        return;
+    }
+    
     try {
         res.render('homepage',{logged_in: req.session.logged_in});
         console.log("rendered")
