@@ -4,7 +4,7 @@
     >
         <div class="flex items-center">
             <div class="flex items-center">
-                <h2 class="text-gray-400 font-bold text-xl"><b>Welcome
+                <h2 class="text-gray-400 font-bold text-xl px-2"><b>Welcome
                     {{user.name}}</b></h2>
             </div>
             <div class="md:hidden flex items-center">
@@ -111,6 +111,13 @@
             }
         }
     });
+
+const menuBtn = document.getElementById('menuBtn');
+const sideNav = document.getElementById('sideNav');
+
+menuBtn.addEventListener('click', () => {
+    sideNav.classList.toggle('hidden');
+});
 </script>
 
 {{#if user.income}}
