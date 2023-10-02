@@ -623,6 +623,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .ml-64 {
   margin-left: 16rem;
 }
@@ -1054,11 +1058,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-yellow-500 {
-  --tw-text-opacity: 1;
-  color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
 .shadow {
