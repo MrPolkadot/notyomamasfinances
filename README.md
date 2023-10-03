@@ -23,7 +23,7 @@
 
 ## Installation
 
-No to install anything.
+No need to install anything.
 Visit: https://moneymagnet.up.railway.app/
 
 ## Usage
