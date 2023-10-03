@@ -1,22 +1,38 @@
 <div class="min-h-screen items-center justify-center place-content-center">
     <div class="m-20 bg-gray-100">
-    <div class="flex flex-row justify-center h-19 p-3">        
-       <p><b>Name: </b> {{expense.expense_name}}</p>        
-    </div>
-    <div class="flex flex-row justify-center h-19 p-3">
-        <p><b>Date: </b>{{format_date expense.expense_date}}</p>
-    </div>
-    
-    <div class="flex flex-row justify-center h-19 p-3">
-        <p><b>Amount: </b>{{format_amount expense.amount}}</p>
-    </div>
-    <div  class="flex flex-row justify-center h-19 p-3">
-        <div class="flex flex-row p-5">
-            <button>
-                <i class="fa-solid fa-trash" style="color: #5d83c6;"></i>
-            Delete
-            </button>
-        </div>
-    </div>
+        <form id="expense-form">
+            <div class="flex flex-row justify-center h-19 p-3">        
+                <input class="hidden" id="expense-id" value="{{expense.id}}">      
+            </div>
+            <div class="flex flex-row justify-center h-19 p-3">
+                <p><b>Name: </b><input id="expense-name" value="{{expense.expense_name}}"></p>        
+            </div>
+            <div class="flex flex-row justify-center h-19 p-3">
+                <p><b>Date: </b><input id="expense-date" value="{{format_date expense.expense_date}}"></p>
+            </div>
+            <div class="flex flex-row justify-center h-19 p-3">
+                <p><b>Amount: </b><input id="expense-amount" value="{{expense.amount}}"></p>
+            </div>
+            <div id="expense-err" style="color: red;"></div>
+            <div  style="justify-content: space-evenly;" class="flex flex-row h-19 p-3">
+                <div class = "flex flex-row p-5">    
+                    <button type="submit">
+                        <i class="fa-solid fa-floppy-disk" style="color:rgb(39, 250, 39)"></i>
+                        Save
+                    </button>
+                </div>
+                <div class="flex flex-row p-5">
+                    <button id="expense-delete" type="click">
+                        <i class="fa-solid fa-trash" style="color: #f10f0f;"></i>
+                    Delete
+                    </button>
+                </div>
+                
+            </div>
+        </form>
     </div>
 </div>
+
+<script src="/js/expenseDelete.js"></script>
+
+<script src="/js/expenseUpdate.js"></script>
