@@ -1,9 +1,10 @@
-const addBill = async (event) => {
-    event.preventDefault();
 
-    const bill_name = document.querySelector('#name').value.trim();
-    const due_date = document.querySelector('#date').value.trim();
-    const amount = document.querySelector('#amount').value.trim();
+const addBill = async (e) => {
+    e.preventDefault();
+
+    const bill_name = document.getElementById('bill-name').value.trim();
+    const due_date = document.getElementById('bill-date').value.trim();
+    const amount = document.getElementById('bill-amount').value.trim();
 
     if (amount.includes('$') || amount.includes(',')) {
       alert("Please remove any '$' or ',' from the amount field.");
@@ -25,4 +26,6 @@ const addBill = async (event) => {
           }
     }
 }
-document.querySelector('#form').addEventListener('submit', addBill);
+
+document.querySelector('#bill-form').addEventListener('submit', addBill);
+
