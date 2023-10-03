@@ -19,14 +19,14 @@
         </tr>
       </thead>
       <tbody>
-        <form class="flex gap-4" id="form">
+        <form class="flex gap-4" id="bill-form">
           <tr class="hover:bg-grey-lighter">
             <td class="py-2 px-4 border-b border-grey-light">
               <div>
                 <input
                   type="text"
                   placeholder="Name"
-                  id="name"
+                  id="bill-name"
                   name="bill-name"
                   class="border rounded py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
                 />
@@ -37,7 +37,7 @@
                 <input
                   type="date"
                   placeholder="Date"
-                  id="date"
+                  id="bill-date"
                   class="border rounded py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
                 />
               </div>
@@ -46,13 +46,13 @@
               <div>
                 <input
                   placeholder="Amount"
-                  id="amount"
+                  id="bill-amount"
                   class="border rounded py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
                 />
               </div>
             </td>
             <td class="justify-center" style="text-align: center;">
-              <button
+              <button id="add" type="submit"
                 class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded"
               >
                 Add
