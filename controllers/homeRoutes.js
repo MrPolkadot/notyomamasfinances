@@ -11,7 +11,6 @@ router.get("/", async (req, res) => {
     
     try {
         res.render('homepage',{logged_in: req.session.logged_in});
-        console.log("rendered")
     } catch (err) {
         res.status(500).json(err);
     }
@@ -61,7 +60,7 @@ router.get('/profile', withAuth, async (req, res) => {
         const user = userData.get({plain:true});
         const remaining = (user.income - (Number(user.totalBills) + Number(user.totalExpenses)));
         const budget = (user.income - user.totalBills)
-        console.log(user);
+      
         res.render('profile', {user, budget, remaining, logged_in: true});
     } catch (err) {
         res.status(500).json(err);
@@ -76,7 +75,7 @@ router.get('/bills', withAuth, async (req, res) => {
             include: [{model: Bills}]
         });
         const bills = billsData.get({plain:true});
-        console.log(bills);
+        
         res.render('bills', {bills, logged_in: true});
     } catch {
         res.status(500).json(err);
@@ -113,7 +112,7 @@ router.get('/bill/:id', withAuth, async (req, res) => {
     try {
         const oneBill = await Bills.findByPk(req.params.id);
         const bill = oneBill.get({ plain: true });
-        console.log(bill);
+        
         res.render('oneBill', { bill, logged_in: true });
     } catch (err) {
         console.log(err);
@@ -125,7 +124,7 @@ router.get('/expense/:id', withAuth, async (req, res) => {
     try {
         const oneExpense = await Expenses.findByPk(req.params.id);
         const expense = oneExpense.get({ plain: true });
-        console.log(expense);
+       
         res.render('oneExpense', { expense, logged_in: true });
     } catch (err) {
         console.log(err);
