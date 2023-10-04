@@ -15,7 +15,7 @@
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Credits](#credits)
+  - [Credits \& Contributors](#credits--contributors)
   - [License](#license)
   - [Technologies](#technologies)
   - [Tests](#tests)
@@ -30,7 +30,7 @@ Visit: https://moneymagnet.up.railway.app/
 
 Once on the website log in and add average income, bills, and expense. The app will do the rest.
 
-## Credits
+## Credits & Contributors
 
 Jacob Maughan - https://github.com/jacslimob  
 Allison Kidd - https://github.com/akidd15  
